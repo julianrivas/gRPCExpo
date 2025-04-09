@@ -1,0 +1,6 @@
+@gRPCExpo.Performance.Contabilidad_HostAddress = http://localhost:5182
+
+GET {{gRPCExpo.Performance.Contabilidad_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

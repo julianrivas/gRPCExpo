@@ -1,0 +1,6 @@
+@gRPCExpo.Performance.Items_HostAddress = http://localhost:5261
+
+GET {{gRPCExpo.Performance.Items_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

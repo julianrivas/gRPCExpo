@@ -1,0 +1,6 @@
+@gRPCExpo.Performance.Client_HostAddress = http://localhost:5190
+
+GET {{gRPCExpo.Performance.Client_HostAddress}}/MqItems/
+Accept: application/json
+
+###

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Infrastructure\Data\Context\Data\**" />
+    <Content Remove="Infrastructure\Data\Context\Data\**" />
+    <EmbeddedResource Remove="Infrastructure\Data\Context\Data\**" />
+    <None Remove="Infrastructure\Data\Context\Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.70.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+	
+  <ItemGroup>
+	<None Update="Infrastructure\Data\Context\Seeds\seedData.json">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Infrastructure\Data\Context\Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gRPC.Expo.Preformance.Messages.cs\gRPC.Expo.Preformance.Messages.cs.csproj" />
+    <ProjectReference Include="..\gRPCExpo.Performance.Exceptions\gRPCExpo.Performance.Exceptions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Presentation\Protos\item.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+
+</Project>
