@@ -4,19 +4,39 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>b52bd403-1fd4-4c06-848a-5b9b7cc9e67a</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.70.0" />
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Items.Application\Items.Application.csproj" />
     <ProjectReference Include="..\Items.Persistence\Items.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common.HttpExceptions">
+      <HintPath>..\..\Common\Common.HttpExceptions\bin\Debug\net9.0\Common.HttpExceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.MassTransit.Contracts">
+      <HintPath>..\..\Common\Common.MassTransit.Contracts\bin\Debug\net9.0\Common.MassTransit.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Protobuf Include="Services\Protos\item.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

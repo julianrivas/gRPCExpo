@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCExpo.Performance.Items";
+
+import "google/protobuf/timestamp.proto";
+
+package item;
+
+message Item {
+  string id = 1;
+  string Descripcion = 2;
+  float Factor = 3;
+  bool FueraDeNomina = 4;
+  bool RequiereFondo = 5;
+  float Orden = 6;
+  bool AgruparEnLiquidacion = 7;
+  google.protobuf.Timestamp  FechaRegistro = 8;
+  string IdUsuarioRegistro = 9;
+  bool Activo = 10;
+  bool GeneraCuentaPorPagar = 11;
+}
+
+message ItemByIdRequest {
+  string id = 1;
+}
+
+message ItemsByEmptyRequest {}
+
+message ItemResponse {
+  Item Item = 1;
+}
+
+message ItemsResponse {
+  repeated Item Items = 1;
+}
+
+service ItemSevice {
+  rpc GetItem (ItemByIdRequest) returns (Item);
+  rpc GetItems (ItemsByEmptyRequest) returns (ItemsResponse);
+}

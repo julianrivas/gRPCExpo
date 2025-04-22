@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using gRPC.Expo.Preformance.Messages.cs.mqContracts;
 using MassTransit;
 
-namespace gRPCExpo.Performance.Items.Infrastructure.Configurations.Masstransit;
+namespace Items.API.Configs;
 
 public static class MasstransitConfig
 {
-    public static void AddMasstransitConfiguration(this IServiceCollection services)
+    public static void AddMasstransit(this IServiceCollection services)
     {
         services.AddMassTransit(x =>
         {
