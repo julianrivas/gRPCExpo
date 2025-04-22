@@ -48,7 +48,7 @@ public class Program
             app.UseSwaggerDevelopmentConfiguration();
 
         app.UseGrpcConfiguration();
-        app.UseStartupMigration<ItemsContext>();
+        app.Services.UseStartupMigration<ItemsContext>();
         app.UseAuthorization();
         app.MapControllers();
         app.Run();

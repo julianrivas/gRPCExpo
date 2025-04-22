@@ -1,15 +1,15 @@
-﻿using gRPCExpo.Performance.Exceptions.Http;
+﻿using Common.HttpExceptions.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace gRPCExpo.Performance.Items.Infrastructure.Configurations.EFCore;
+namespace Items.Persistence.Context.Configs;
 
 public static class EfCoreConfig
 {
     public static Action<DbContextOptionsBuilder> UseDatabase(string? connectionString)
     {
         if (string.IsNullOrEmpty(connectionString))
-            throw new InternalServerErrorException(
-                "The connectionString does not exist.");
+            throw new ConflictException("The connectionString does not exist.");
 
         return options => options
             .UseSqlServer(connectionString);

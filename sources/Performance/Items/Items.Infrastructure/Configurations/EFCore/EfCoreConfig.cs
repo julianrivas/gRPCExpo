@@ -15,9 +15,9 @@ public static class EfCoreConfig
             .UseSqlServer(connectionString);
     }
 
-    public static void UseStartupMigration<T>(this IServiceProvider service) where T : DbContext
+    public static void UseStartupMigration<T>(this WebApplication app) where T : DbContext
     {
-        using var scope = service.CreateScope();
+        using var scope = app.Services.CreateScope();
         var dbContext = scope.ServiceProvider
             .GetRequiredService<T>();
 
