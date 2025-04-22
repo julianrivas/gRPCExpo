@@ -1,20 +1,17 @@
 using Items.API.Configs;
 using Items.Application;
 using Items.Persistence;
-using Mapster;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication
+    .CreateBuilder(args);
 
-builder.WebHost.AddKestrelConfig();
+builder.WebHost
+    .AddKestrelConfig();
 
-builder.Services.AddApplication();
-builder.Services.AddPersistence(builder.Configuration);
-
-builder.Services.AddMapster();
-builder.Services.AddControllers();
-builder.Services.AddMasstransit();
-builder.Services.AddGrpc();
-builder.Services.AddSwagger();
+builder.Services
+    .AddApplication()
+    .AddPersistence(builder.Configuration)
+    .AddInfrastructure();
 
 var app = builder.Build();
 

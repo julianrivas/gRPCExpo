@@ -6,8 +6,10 @@ namespace Items.Application;
 
 public static class DependencyInjection
 {
-    public static void AddApplication(this IServiceCollection servicios)
+    public static IServiceCollection AddApplication(this IServiceCollection servicios)
     {
         servicios.AddScoped<IItemQuery, ItemQuery>();
+
+        return servicios;
     }
 }

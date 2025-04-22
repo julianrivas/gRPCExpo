@@ -10,7 +10,7 @@ namespace Items.Persistence;
 
 public static class DependencyInjection
 {
-    public static void AddPersistence(this IServiceCollection servicios, IConfiguration configuration)
+    public static IServiceCollection AddPersistence(this IServiceCollection servicios, IConfiguration configuration)
     {
         var connectionString = configuration
             .GetConnectionString("DatabaseConnection");
@@ -22,5 +22,7 @@ public static class DependencyInjection
             .UseSqlServer(connectionString));
 
         servicios.AddScoped<IItemDataRepository, ItemDataRepository>();
+
+        return servicios;
     }
 }
