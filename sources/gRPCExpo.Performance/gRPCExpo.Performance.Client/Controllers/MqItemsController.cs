@@ -32,7 +32,7 @@ public class MqItemsController(IRequestClient<IMqGetItemsRequest> client) : Cont
         handler.ServerCertificateCustomValidationCallback = HttpClientHandler
             .DangerousAcceptAnyServerCertificateValidator;
 
-        using GrpcChannel channel = GrpcChannel.ForAddress("http://localhost:32773",
+        using GrpcChannel channel = GrpcChannel.ForAddress("http://localhost:32769",
             new GrpcChannelOptions { HttpHandler = handler });
 
         ItemSevice.ItemSeviceClient seviceClient = new ItemSevice.ItemSeviceClient(channel);
