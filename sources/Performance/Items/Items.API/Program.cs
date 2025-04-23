@@ -18,6 +18,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment()) 
     app.UseSwaggerDevelopment();
 
+app.UseHttpsRedirection();
 app.UseEFCoreMigration();
 app.MapControllers();
 app.UseGrpc();

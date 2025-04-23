@@ -15,6 +15,7 @@ public static class KestrelConfig
 
             options.ListenAnyIP(8081, listenOptions =>
             {
+                listenOptions.UseHttps();
                 listenOptions.Protocols = HttpProtocols.Http2;
             });
         });

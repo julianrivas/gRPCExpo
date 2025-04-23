@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Application", "Clie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Infrastructure", "Clients.Infrastructure\Clients.Infrastructure.csproj", "{0DA59D8C-8B6B-445F-874A-EABC16A1C52F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48C47EB2-2590-4229-BF58-A7354925FD12} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{628EC9D6-23EA-43F7-AF66-34FB2F6C71E5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0DA59D8C-8B6B-445F-874A-EABC16A1C52F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0825A7D1-1855-4DE3-93BE-F6101E3987AA}
 	EndGlobalSection
 EndGlobal
