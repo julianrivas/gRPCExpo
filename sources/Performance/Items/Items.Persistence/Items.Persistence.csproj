@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <Reference Include="Common.HttpExceptions">
-      <HintPath>..\..\Common\Common.HttpExceptions\bin\Debug\net9.0\Common.HttpExceptions.dll</HintPath>
+      <HintPath>..\..\Common\Common.HttpExceptions\bin\Release\net9.0\Common.HttpExceptions.dll</HintPath>
     </Reference>
   </ItemGroup>
 
