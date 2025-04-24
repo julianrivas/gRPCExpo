@@ -1,0 +1,18 @@
+services:
+  items.api:
+    image: ${DOCKER_REGISTRY-}itemsapi
+    ports:
+    - "11000:8080" 
+    - "11001:8081" 
+    build:
+      context: .
+      dockerfile: Items.API/Dockerfile
+
+  items.grpc:
+    image: ${DOCKER_REGISTRY-}itemsgrpc
+    ports:
+    - "11002:8081"
+    build:
+      context: .
+      dockerfile: Items.Grpc/Dockerfile
+

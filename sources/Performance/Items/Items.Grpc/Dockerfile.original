@@ -13,9 +13,6 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Items.Grpc/Items.Grpc.csproj", "Items.Grpc/"]
-COPY ["Items.Application/Items.Application.csproj", "Items.Application/"]
-COPY ["Items.Domain/Items.Domain.csproj", "Items.Domain/"]
-COPY ["Items.Persistence/Items.Persistence.csproj", "Items.Persistence/"]
 RUN dotnet restore "./Items.Grpc/Items.Grpc.csproj"
 COPY . .
 WORKDIR "/src/Items.Grpc"
