@@ -1,0 +1,9 @@
+services:
+  items.api:
+    image: ${DOCKER_REGISTRY-}itemsapi
+    ports:
+    - "11001:8080"
+    - "11002:8081"
+    build:
+      context: .
+      dockerfile: Items.API/Dockerfile
