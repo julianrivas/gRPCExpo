@@ -4,9 +4,9 @@ using gRPCExpo.Performance.Items;
 using Items.Application.Interfaces.Persistence;
 using Items.Application.Models.Dto;
 
-namespace Items.API.Services;
+namespace Items.Grpc.Services;
 
-public class ItemConsumer(IItemDataRepository repository, ILogger<ItemConsumer> logger) : ItemSevice.ItemSeviceBase
+public class ItemService(IItemDataRepository repository, ILogger<ItemService> logger) : ItemSevice.ItemSeviceBase
 {
     public override Task<Item> GetItem(ItemByIdRequest request, ServerCallContext context)
     {

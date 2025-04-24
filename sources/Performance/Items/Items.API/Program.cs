@@ -5,9 +5,6 @@ using Items.Persistence;
 var builder = WebApplication
     .CreateBuilder(args);
 
-builder.WebHost
-    .AddKestrelConfig();
-
 builder.Services
     .AddApplication()
     .AddPersistence(builder.Configuration)
@@ -20,6 +17,5 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseEFCoreMigration();
-app.MapControllers();
-app.UseGrpc();
+app.MapControllers();   
 app.Run();

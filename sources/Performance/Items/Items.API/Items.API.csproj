@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.70.0" />
     <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="MassTransit" Version="8.4.0" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.4.0" />
@@ -33,11 +32,6 @@
     <Reference Include="Common.MassTransit.Contracts">
       <HintPath>..\..\Common\Common.MassTransit.Contracts\bin\Debug\net9.0\Common.MassTransit.Contracts.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Protobuf Include="Services\Protos\item.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

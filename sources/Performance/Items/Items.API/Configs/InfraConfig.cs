@@ -9,7 +9,6 @@ namespace Items.API.Configs
             servicios.AddMapster();
             servicios.AddControllers();
             servicios.AddMasstransit();
-            servicios.AddGrpc();
             servicios.AddSwagger();
 
             return servicios;
