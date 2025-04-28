@@ -1,6 +1,6 @@
 ﻿namespace Common.MassTransit.Contracts.Bitacoras;
 
-interface IMqBitacora
+public interface IMqBitacora
 {
     public Guid Guid { get; }
     public int IdEmpresa { get; }
