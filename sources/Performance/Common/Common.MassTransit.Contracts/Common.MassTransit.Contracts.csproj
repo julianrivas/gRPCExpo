@@ -7,9 +7,4 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Bitacoras\" />
-    <Folder Include="ContabilidadMovimientos\" />
-  </ItemGroup>
-
 </Project>
