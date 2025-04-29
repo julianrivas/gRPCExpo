@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "gRPCExpo.Performance.Bitacoras";
+option csharp_namespace = "gRPCExpo.Performance.Benchmark";
 
 import "google/protobuf/timestamp.proto";
 

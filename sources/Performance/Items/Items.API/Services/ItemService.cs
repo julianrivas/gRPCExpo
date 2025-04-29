@@ -6,7 +6,7 @@ using Items.Application.Models.Dto;
 
 namespace Items.API.Services;
 
-public class ItemConsumer(IItemDataRepository repository, ILogger<ItemConsumer> logger) : ItemSevice.ItemSeviceBase
+public class ItemConsumer(IItemDataRepository repository, ILogger<ItemConsumer> logger) : ItemService.ItemServiceBase
 {
     public override Task<Item> GetItem(ItemByIdRequest request, ServerCallContext context)
     {

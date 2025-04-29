@@ -6,7 +6,7 @@ using gRPCExpo.Performance.Bitacoras;
 
 namespace Bitacoras.API.Services;
 
-public class BitacoraConsumer(IBitacoraDataRepository repository, ILogger<BitacoraConsumer> logger) : BitacoraSevice.BitacoraSeviceBase
+public class BitacoraConsumer(IBitacoraDataRepository repository, ILogger<BitacoraConsumer> logger) : BitacoraService.BitacoraServiceBase
 {
     public override Task<Bitacora> GetBitacora(BitacoraByIdRequest request, ServerCallContext context)
     {

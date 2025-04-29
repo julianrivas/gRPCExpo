@@ -43,7 +43,7 @@ message BitacorasResponse {
   repeated Bitacora Bitacoras = 1;
 }
 
-service BitacoraSevice {
+service BitacoraService {
   rpc GetBitacora (BitacoraByIdRequest) returns (Bitacora);
   rpc GetBitacoras (BitacorasByEmptyRequest) returns (BitacorasResponse);
 }

@@ -22,11 +22,15 @@
 
   <ItemGroup>
     <Protobuf Include="Protos\item.proto" GrpcServices="Client" />
+    <Protobuf Include="Protos\bitacora.proto" GrpcServices="Client" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Common.HttpExceptions">
+      <HintPath>..\..\Common\Common.HttpExceptions\bin\Release\net9.0\Common.HttpExceptions.dll</HintPath>
+    </Reference>
     <Reference Include="Common.MassTransit.Contracts">
-      <HintPath>..\Common\Common.MassTransit.Contracts\bin\Release\net9.0\Common.MassTransit.Contracts.dll</HintPath>
+      <HintPath>..\..\Common\Common.MassTransit.Contracts\bin\Release\net9.0\Common.MassTransit.Contracts.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -31,7 +31,7 @@ public class BitacorasController(IRequestClient<IMqGetItemsRequest> client) : Co
         using GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.20.48:32771",
             new GrpcChannelOptions { HttpHandler = handler });
 
-        BitacoraSevice.BitacoraSeviceClient seviceClient = new BitacoraSevice.BitacoraSeviceClient(channel);
+        BitacoraService.BitacoraServiceClient seviceClient = new BitacoraService.BitacoraServiceClient(channel);
         BitacorasResponse response = await seviceClient.GetBitacorasAsync(new BitacorasByEmptyRequest());
 
         return Ok(response.Bitacoras);

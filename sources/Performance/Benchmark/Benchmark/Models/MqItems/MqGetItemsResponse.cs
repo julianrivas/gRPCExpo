@@ -1,6 +1,5 @@
-﻿
-using Common.MassTransit.Contracts.Items;
+﻿using Common.MassTransit.Contracts.Items;
 
-namespace Benchmark.Models;
+namespace Benchmark.Models.MqItems;
 
 public record MqGetItemsResponse(IEnumerable<IMqItem> Items) : IMqGetItemsResponse;

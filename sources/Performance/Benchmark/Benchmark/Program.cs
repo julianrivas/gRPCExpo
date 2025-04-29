@@ -1,4 +1,5 @@
 ﻿using Benchmark;
 using BenchmarkDotNet.Running;
 
-BenchmarkRunner.Run<MessagingBenchmark>();
+//BenchmarkRunner.Run<ItemsMessagingBenchmark>();
+BenchmarkRunner.Run<BitacorasMessagingBenchmark>();

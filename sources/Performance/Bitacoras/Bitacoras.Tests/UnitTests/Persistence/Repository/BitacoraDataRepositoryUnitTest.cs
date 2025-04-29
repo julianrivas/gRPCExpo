@@ -11,7 +11,7 @@ public class BitacoraDataRepositoryTests
     private BitacorasContext CreateContextWithData(IEnumerable<BitacoraData> items)
     {
         var options = new DbContextOptionsBuilder<BitacorasContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Cada test tiene su propia DB
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) 
             .Options;
 
         var context = new BitacorasContext(options);
@@ -30,14 +30,14 @@ public class BitacoraDataRepositoryTests
             new(new Guid("aecde61c-b22c-40ae-b1e0-2e3887fb1b99"), 1,1000,
                 766, new DateTime(2023,04,01), 1,"P17",
                 33333.33m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2,null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2,string.Empty, "N"),
 
             new(new Guid("8888c143-2c01-4956-b453-a4ab0a485d87"), 1,2000,
                 766, new DateTime(2023,04,01), 1,"P17",
                 66666.66m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2,null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2,string.Empty, "N"),
         };
 
         using var context = CreateContextWithData(fakeData);
@@ -56,20 +56,20 @@ public class BitacoraDataRepositoryTests
             new(new Guid("aecde61c-b22c-40ae-b1e0-2e3887fb1b99"), 1,1000, 
                 766, new DateTime(2023,04,01), 1,"P17",
                 33333.33m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2,null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2,string.Empty, "N"),
 
             new(new Guid("8888c143-2c01-4956-b453-a4ab0a485d87"), 1,2000,
                 766, new DateTime(2023,04,01), 1,"P17",
                 66666.66m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2,null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2,string.Empty, "N"),
 
             new(new Guid("38d01f69-e563-4819-9e66-5a4a1307131f"), 1,1000,
                 766, new DateTime(2023,04,01), 1,"P17",
                 99999.99m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2,null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2,string.Empty, "N"),
 
         };
 
@@ -92,8 +92,8 @@ public class BitacoraDataRepositoryTests
             new(new Guid("aecde61c-b22c-40ae-b1e0-2e3887fb1b99"), 1,1000,
                 766, new DateTime(2023,04,01), 1,"P17",
                 33333.33m, 1, 1, 1,
-                0m, 0, false, "23351", null,
-                null, 2, null, "N"),
+                0m, 0, false, "23351", "10101",
+                1, 2, string.Empty, "N"),
         };
 
         using var context = CreateContextWithData(fakeData);

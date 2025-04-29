@@ -16,5 +16,5 @@ public class BitacorasContext(DbContextOptions<BitacorasContext> options) : DbCo
     }
 
     public IQueryable<BitacoraData> ObtainTrackedItemsData() => Bitacoras;
-    public IQueryable<BitacoraData> ObtainUntrackedItemsData() => Bitacoras.AsNoTracking();
+    public IQueryable<BitacoraData> ObtainUntrackedBitacorasData() => Bitacoras.AsNoTracking();
 }

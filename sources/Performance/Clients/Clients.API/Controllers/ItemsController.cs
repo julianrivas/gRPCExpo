@@ -32,7 +32,7 @@ public class ItemsController(IRequestClient<IMqGetItemsRequest> client) : Contro
         using GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.20.48:32783",
             new GrpcChannelOptions { HttpHandler = handler });
 
-        ItemSevice.ItemSeviceClient seviceClient = new ItemSevice.ItemSeviceClient(channel);
+        ItemService.ItemServiceClient seviceClient = new ItemService.ItemServiceClient(channel);
         ItemsResponse response = await seviceClient.GetItemsAsync(new ItemsByEmptyRequest());
 
         return Ok(response.Items);

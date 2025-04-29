@@ -14,13 +14,14 @@ public class BitacoraDataRepository(BitacorasContext context) :   IBitacoraDataR
 {
     public IEnumerable<BitacoraData> ObtainBitacoraDataList()
     {
-        return context.ObtainUntrackedItemsData()
+        return context.ObtainUntrackedBitacorasData()
+            .Where(bitacora => bitacora.IdEmpresa == 1) 
             .AsEnumerable();
     }
 
     public BitacoraData ObtainBitacoraData(Guid guid)
     {
-        return context.ObtainUntrackedItemsData()
+        return context.ObtainUntrackedBitacorasData()
                    .FirstOrDefault(itm => itm.Guid == guid)
                ?? throw new NotFoundException($"The bitacora with guid {guid} does not exist.");
     }

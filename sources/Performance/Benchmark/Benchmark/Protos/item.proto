@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "gRPCExpo.Performance.Client";
+option csharp_namespace = "gRPCExpo.Performance.Benckmark";
 
 import "google/protobuf/timestamp.proto";
 
@@ -34,7 +34,7 @@ message ItemsResponse {
   repeated Item Items = 1;
 }
 
-service ItemSevice {
+service ItemService {
   rpc GetItem (ItemByIdRequest) returns (Item);
   rpc GetItems (ItemsByEmptyRequest) returns (ItemsResponse);
 }
