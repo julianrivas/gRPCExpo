@@ -4,5 +4,5 @@ namespace Common.MassTransit.Contracts.Bitacoras;
 
 public interface IMqGetBitacorasResponse
 {
-    IEnumerable<IMqItem> Bitacoras { get; }
+    IEnumerable<IMqBitacora> Bitacoras { get; }
 }

@@ -13,8 +13,7 @@ public interface IMqBitacora
     public int DineroMoneda { get; }
     public decimal Cantidad { get; }
     public int Unidad { get; }
-    public decimal BaseDeCalculoValor { get; }
-    public decimal BaseDeCalculoMoneda { get; }
+    public decimal BaseDeCalculo { get; }
     public int PeriodicidadPago { get; }
     public bool FueraDeNomina { get; }
     public string Nit { get; }

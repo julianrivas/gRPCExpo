@@ -1,4 +1,5 @@
 ﻿using Clients.API.Contracts;
+using Clients.API.Contracts.MqItems;
 using Common.MassTransit.Contracts.Items;
 using Grpc.Net.Client;
 using gRPCExpo.Performance.Client;
@@ -11,13 +12,7 @@ namespace Clients.API.Controllers;
 [ApiController]
 public class ItemsController(IRequestClient<IMqGetItemsRequest> client) : ControllerBase
 {
-    [HttpGet]
-    public IActionResult GetStatus()
-    {
-        return Ok("Api running...");
-    }
-
-    [HttpGet("GetItemsMqAsync")]
+    [HttpGet("GetItemsMq")]
     public async Task<IActionResult> GetItemsMqAsync()
     {
         Response<IMqGetItemsResponse> response = await client.GetResponse<IMqGetItemsResponse>(new MqGetItemsRequest(), CancellationToken.None, RequestTimeout.Default);
@@ -25,7 +20,7 @@ public class ItemsController(IRequestClient<IMqGetItemsRequest> client) : Contro
         return Ok(response.Message.Items);
     }
 
-    [HttpGet("GetItemsRpcAsync")]
+    [HttpGet("GetItemsRpc")]
     public async Task<IActionResult> GetItemsRpcAsync()
     {
         HttpClientHandler handler = new HttpClientHandler()
@@ -34,7 +29,7 @@ public class ItemsController(IRequestClient<IMqGetItemsRequest> client) : Contro
                 .DangerousAcceptAnyServerCertificateValidator
         };
 
-        using GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.20.48:32807",
+        using GrpcChannel channel = GrpcChannel.ForAddress("https://192.168.20.48:32783",
             new GrpcChannelOptions { HttpHandler = handler });
 
         ItemSevice.ItemSeviceClient seviceClient = new ItemSevice.ItemSeviceClient(channel);

@@ -12,4 +12,6 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
+app.MapGet("/", () => "API running");
+
 app.Run();

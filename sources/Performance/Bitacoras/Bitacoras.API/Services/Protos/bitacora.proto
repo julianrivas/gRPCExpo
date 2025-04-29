@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCExpo.Performance.Bitacoras";
+
+import "google/protobuf/timestamp.proto";
+
+package bitacora;
+
+message Bitacora {
+    string guid = 1;                    
+    int32 idEmpresa = 2;
+    int32 idEmpleado = 3;
+    int32 idPeriodo = 4;                 
+    google.protobuf.Timestamp fecha = 5; 
+    int32 dia = 6;                     
+    string idItem = 7;
+    double dineroValor = 8;             
+    uint32 dineroMoneda = 9;
+    double cantidad = 10;              
+    uint32  unidad = 11;
+    double baseDeCalculo = 12;            
+    uint32  periodicidadPago = 13;
+    bool fueraDeNomina = 14;
+    string nit = 15;
+    string idCentroCosto = 16;
+    int32 idPlanCuentaContable = 17;      
+    uint32  estado = 18;
+    string observacion = 19;
+    string tipoPeriodo = 20;
+}
+
+message BitacoraByIdRequest {
+  string id = 1;
+}
+
+message BitacorasByEmptyRequest {}
+
+message BitacoraResponse {
+  Bitacora Bitacora = 1;
+}
+
+message BitacorasResponse {
+  repeated Bitacora Bitacoras = 1;
+}
+
+service BitacoraSevice {
+  rpc GetBitacora (BitacoraByIdRequest) returns (Bitacora);
+  rpc GetBitacoras (BitacorasByEmptyRequest) returns (BitacorasResponse);
+}
